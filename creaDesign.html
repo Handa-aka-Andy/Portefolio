@@ -11,28 +11,36 @@
         <link href = "style.css" rel = "stylesheet" type = "text/css" />
     </head>
 
-    <body>
-        <section class="header">
-            <nav>
-                <a href="index.html">
-                    <img src="images/logo.png">
-                </a>
-			
-                <div class = "nav-links">
-                    <ul>
-                        <li><a href = "3d.html">3D</a></li>
-                        <li><a href = "creaDesign.html">creation design</a></li>
-                        <li><a href = "devWeb.html">développement web</a></li>
-                        <li><a href = "jeuxVideo.html">jeux video</a></li>
-                    </ul>
-                </div>
-            </nav>
-            
+    <body class="light-theme">
+        <header>
+          <nav>
+            <a href="index.html">
+                <img src="images/logo.png">
+            </a>
+
+            <ul>
+              <li>
+                <label class="switch">
+                  <i class="fas fa-adjust"></i>
+                  <div>
+                    <input type="checkbox" />
+                    <span class="slider round"></span>
+                  </div>
+                </label>
+                </li>
+                <li><a href = "3d.html">3D</a></li>
+                <li><a href = "creaDesign.html">creation design</a></li>
+                <li><a href = "devWeb.html">développement web</a></li>
+                <li><a href = "jeuxVideo.html">jeux video</a></li>
+            </ul>
+          </nav>
+        </header>
+        <main>
             <div class = "text-box">
-                <h1>Bienvenue dans la partie Creation design</h1>
+                <h1>Bienvenue dans la partie Création Design</h1>
                 <p>travaux en cours... </p>
             </div>
-        </section>
+        </main>
         
         <section class = "footer">
             <div class = "footer-content">
@@ -64,5 +72,8 @@
                 </div>
             </div>
         </section>
+        <button onclick="topFunction()" id="myBtn">top</button>
+        
+        <script src="script.js"></script>
     </body>
 </html>
