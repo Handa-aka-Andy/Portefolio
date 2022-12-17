@@ -1,19 +1,85 @@
-* {
-	margin: 0;
-	padding: 0;
+:root {
+	--navHeight: 70px;
+	--lightBlue: #cbdbff;
+	--blue: #b6b6ff;
+	--darkGryey: rgba(5,10,30,0.7);
+	--lightBlack: #202020;
+	--white: #ffffff;
+	--black: #000000;
+	--grey: #2f2f2f;
 }
 
-.header {
-    min-height: 100vh;
-    width: 100%;
-    background-image: linear-gradient(rgba(5,10,30,0.7),rgba(5,10,30,0.7)),url(https://st.depositphotos.com/12203114/57643/v/600/depositphotos_576430060-stock-illustration-japanese-background-with-black-and.jpg);
-    background-position: center;
-    background-size: cover;
-    position: relative;
+.light-theme {
+	--themeDropDownBg: var(--darkGryey);
+	--themeIconBorderColor: var(--lightBlue);
+	--navBg: var(--lightBlue);
+	--navLinkHoverBg: var(--blue);
+	--mainBg: var(--darkGryey);
+	--fontColor: var(--black);
+}
+  
+.dark-mode {
+	--themeDropDownBg: var(--grey);
+	--themeIconBorderColor: var(--lightBlack);
+	--navBg: var(--lightBlack);
+	--navLinkHoverBg: var(--grey);
+	--mainBg: var(--grey);
+	--fontColor: var(--white);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--fontColor);
+  transition: background-color 0.6s ease, color 1s ease;
+}
+
+.switch {
+  width: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.switch div {
+  position: relative;
+  display: block;
+  background: #eee;
+  width: 30px;
+  border-radius: 50px;
+  padding: 0 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.fa-adjust {
+  transform: rotate(180deg);
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #999;
+  transition: 0.4s;
+  border-radius: 34px;
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  position: relative;
+}
+
+input:checked + .slider {
+  transform: translateX(8px);
 }
 
 nav {
-    display: flex;
+	background: var(--navBg);
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+	font-size: 1.1rem;
+	position: relative;
+	display: flex;
     padding: 2% 6%;
     justify-self: space-between;
     align-items: center;
@@ -23,36 +89,47 @@ nav img {
 	width: 100px;
 }
 
-.nav-links {
-    flex: 1;
-    text-align: right;
+nav ul {
+  list-style-type: none;
 }
 
-.nav-links ul li {
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  height: var(--navHeight);
+  padding: 0 10px;
 }
 
-.nav-links ul li a {
-    color: white;
+nav ul li {
+	padding: 12px 10px;
+	cursor: pointer;
+	transition: background 0.3s ease;
+	border-radius: 4px;
+	position: relative;
+}
+nav ul li a{
+	color: white;
     text-decoration: none;
     font-size: 20px;
 }
 
-.nav-links ul li::after {
-    content: "";
-    width: 0%;
-    height: 2px;
-    background: red;
-    display: block;
-    margin: auto;
-    transition: 0.5;
+nav ul li:hover {
+	background-color: var(--navLinkHoverBg);
 }
 
-.nav-links ul li:hover::after {
-    width: 100%;
+main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 3.5rem;
+	background: var(--mainBg);
+	height: calc(100vh - var(--navHeight));
+	background-image: linear-gradient(rgba(5,10,30,0.7),rgba(5,10,30,0.7)),url(https://st.depositphotos.com/12203114/57643/v/600/depositphotos_576430060-stock-illustration-japanese-background-with-black-and.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
 }
 
 .text-box {
@@ -158,4 +235,39 @@ nav img {
         left: 90px;
         list-style-type: none;
     }
+}
+
+.dark-mode {
+	background-color: black;
+	color: var(--fontColor);
+}
+
+#myBtn {
+	display: none;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 100;
+	border: none;
+	outline: none;
+	background-color: #9090ff;
+	color: white;
+	cursor: pointer;
+	padding: 15px;
+	border-radius: 15px;
+	font-size: 20px;
+}
+
+#myBtn:hover {
+	background-color: #bbbbff;
+}
+
+button {
+	margin-left: 20px;
+	padding: 9px 25px;
+	background-color: #b6b6ff;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.3 ease 0s;
 }
